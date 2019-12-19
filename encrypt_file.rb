@@ -22,8 +22,7 @@ class MetasploitModule < Msf::Post
     register_options(
     [
 	OptString.new('PATH', [ true, 'Specify a file to be encrypted.', 'C:\\User\\' ]),
-	OptString.new('DESTINATION', [ true, 'Specify a destination for the encrypted file.', 'C:\\Temp' ]),
-	OptString.new('KEY', [ true, 'Specify an encryption key.', 'Password' ]),    
+	OptString.new('DEST', [ true, 'Specify a destination for the encrypted file.', 'C:\\Temp' ]),
     ], self.class)
     end
 
@@ -43,7 +42,6 @@ class MetasploitModule < Msf::Post
 	outf = ''
 	outf << cipher.update(buffer)
 	outf << cipher.final
-	print_good(outf)
 	write_file(destpath,outf)
     else
     #If file doesn't exist throw an error
