@@ -1,4 +1,4 @@
 # encrypted-file-module
-Metasploit Module for File Encryption
+Metasploit Module for Encrypting Files
 ## Notes
-This module will encrypt a file found on a machine.  
+This module will encrypt a file found on a machine with a meterpreter shell.  
